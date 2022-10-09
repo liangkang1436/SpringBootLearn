@@ -21,6 +21,7 @@
     </properties>
 
     <dependencies>
+        <!-- 引入Web相关的依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -29,6 +30,7 @@
 
     <build>
         <plugins>
+            <!-- 将当前应用打包成一个可执行的jar包，如果是web项目，则打出的包中自带了Tomcat，可直接通过 java -jar 运行，非常方便  -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
