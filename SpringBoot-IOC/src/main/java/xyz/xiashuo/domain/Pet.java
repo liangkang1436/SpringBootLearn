@@ -11,6 +11,9 @@ public class Pet {
         this.name = name;
     }
 
+    public Pet() {
+    }
+
     public Pet(String name) {
         this.name = name;
     }

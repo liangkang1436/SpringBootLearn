@@ -11,6 +11,9 @@ public class User {
         this.age = age;
     }
 
+    public User() {
+    }
+
     public Pet getPet() {
         return pet;
     }
