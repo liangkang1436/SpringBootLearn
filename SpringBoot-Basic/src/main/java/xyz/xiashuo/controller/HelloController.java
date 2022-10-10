@@ -10,7 +10,7 @@ public class HelloController {
     // http://localhost:8888/SpringBoot-Basic/hello
     @RequestMapping("/sayHello")
     public String sayHello() {
-        return "Hello, Spring Boot 2!";
+        return "Hello, Spring Boot 2! 就是这么神奇吗！";
     }
 
 }
