@@ -3,17 +3,31 @@ package xyz.xiashuo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import xyz.xiashuo.bean.MyPropertyMapBean;
+import xyz.xiashuo.bean.MyPropertyMapBean2;
 import xyz.xiashuo.config.MyConfig;
 import xyz.xiashuo.domain.Pet;
 import xyz.xiashuo.domain.User;
 
 /**
  * 主程序类
+ *
  * @SpringBootApplication：这是一个SpringBoot应用
  */
 @SpringBootApplication
 public class MainApplication {
+
     public static void main(String[] args) {
+        final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
+        MyPropertyMapBean myPropertyMapBean = context.getBean("myPropertyMapBean", MyPropertyMapBean.class);
+        System.out.println(myPropertyMapBean.toString());
+        MyPropertyMapBean MyPropertyMapBean1 = context.getBean("MyPropertyMapBean1", MyPropertyMapBean.class);
+        System.out.println(MyPropertyMapBean1.toString());
+        MyPropertyMapBean2 bean = context.getBean(MyPropertyMapBean2.class);
+        System.out.println(bean.toString());
+    }
+
+    public static void main1(String[] args) {
         //ConfigurableApplicationContext 实际上就是IOC容器
         final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
         // 打印容器里的所有组件

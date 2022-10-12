@@ -6,6 +6,15 @@ public class User {
 
     private Pet pet;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", pet=" + pet +
+                '}';
+    }
+
     public User(String name, Integer age) {
         this.name = name;
         this.age = age;
