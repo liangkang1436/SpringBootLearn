@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.AutoConfigurationImportFilter;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.io.support.SpringFactoriesLoader;
 import xyz.xiashuo.bean.MyPropertyMapBean;
@@ -23,8 +24,13 @@ import java.util.List;
 @SpringBootApplication
 public class MainApplication {
 
-
     public static void main(String[] args) {
+        final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
+        ServerProperties serverProperties = context.getBean(ServerProperties.class);
+        System.out.println(serverProperties.getPort()+serverProperties.getServlet().getContextPath());
+    }
+
+    public static void main4(String[] args) {
         final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
         List<AutoConfigurationImportFilter> autoConfigurationImportFilter = SpringFactoriesLoader.loadFactories(AutoConfigurationImportFilter.class, null);
         System.out.println(autoConfigurationImportFilter.size());
