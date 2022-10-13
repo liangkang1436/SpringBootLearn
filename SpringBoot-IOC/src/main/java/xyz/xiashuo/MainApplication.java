@@ -1,6 +1,7 @@
 package xyz.xiashuo;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import xyz.xiashuo.bean.MyPropertyMapBean;
@@ -8,6 +9,8 @@ import xyz.xiashuo.bean.MyPropertyMapBean2;
 import xyz.xiashuo.config.MyConfig;
 import xyz.xiashuo.domain.Pet;
 import xyz.xiashuo.domain.User;
+
+import java.util.List;
 
 /**
  * 主程序类
@@ -18,6 +21,15 @@ import xyz.xiashuo.domain.User;
 public class MainApplication {
 
     public static void main(String[] args) {
+        final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
+        // 原本想直接通过getBean方法获取 AutoConfigurationPackages.BasePackages 类型的ban，但是
+        // 根据权限设计和包设计，无法直接获取 AutoConfigurationPackages.BasePackages 类，
+        // 算了，直接使用 AutoConfigurationPackages.get 算了
+        List<String> strings = AutoConfigurationPackages.get(context);
+        System.out.println(strings);
+    }
+
+    public static void main2(String[] args) {
         final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
         MyPropertyMapBean myPropertyMapBean = context.getBean("myPropertyMapBean", MyPropertyMapBean.class);
         System.out.println(myPropertyMapBean.toString());
