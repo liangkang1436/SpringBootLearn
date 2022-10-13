@@ -26,6 +26,10 @@ public class MainApplication {
 
     public static void main(String[] args) {
         final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
+    }
+
+    public static void main5(String[] args) {
+        final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
         ServerProperties serverProperties = context.getBean(ServerProperties.class);
         System.out.println(serverProperties.getPort()+serverProperties.getServlet().getContextPath());
     }
