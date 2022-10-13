@@ -1,9 +1,12 @@
 package xyz.xiashuo;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.AutoConfigurationImportFilter;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.io.support.SpringFactoriesLoader;
 import xyz.xiashuo.bean.MyPropertyMapBean;
 import xyz.xiashuo.bean.MyPropertyMapBean2;
 import xyz.xiashuo.config.MyConfig;
@@ -20,7 +23,27 @@ import java.util.List;
 @SpringBootApplication
 public class MainApplication {
 
+
     public static void main(String[] args) {
+        final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
+        List<AutoConfigurationImportFilter> autoConfigurationImportFilter = SpringFactoriesLoader.loadFactories(AutoConfigurationImportFilter.class, null);
+        System.out.println(autoConfigurationImportFilter.size());
+        List<String> enableAutoConfigurations  = SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class, null);
+        System.out.println(enableAutoConfigurations.size());
+        try {
+            Class<?> aClass = Class.forName(enableAutoConfigurations.get(0));
+            Object o = aClass.newInstance();
+            System.out.println(o.toString());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void main3(String[] args) {
         final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
         // 原本想直接通过getBean方法获取 AutoConfigurationPackages.BasePackages 类型的ban，但是
         // 根据权限设计和包设计，无法直接获取 AutoConfigurationPackages.BasePackages 类，
