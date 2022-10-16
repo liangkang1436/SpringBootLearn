@@ -1,5 +1,7 @@
 package xyz.xiashuo;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.AutoConfigurationImportFilter;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
@@ -10,6 +12,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.io.support.SpringFactoriesLoader;
 import xyz.xiashuo.bean.MyPropertyMapBean;
 import xyz.xiashuo.bean.MyPropertyMapBean2;
+import xyz.xiashuo.bean.Student;
 import xyz.xiashuo.config.MyConfig;
 import xyz.xiashuo.domain.Pet;
 import xyz.xiashuo.domain.User;
@@ -24,8 +27,13 @@ import java.util.List;
 @SpringBootApplication
 public class MainApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
         final ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
+        Student bean = context.getBean(Student.class);
+        // 字符串化
+        ObjectMapper Obj = new ObjectMapper();
+        String jsonStr = Obj.writeValueAsString(bean);
+        System.out.println(jsonStr);
     }
 
     public static void main5(String[] args) {

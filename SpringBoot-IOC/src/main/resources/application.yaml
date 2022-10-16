@@ -1,0 +1,66 @@
+student:
+#  默认，会将属性名从驼峰命名法（camelCased）转化为串式命名法（kebab-cased），举个例子 属性名为userName，在yaml中，通过user-name设置
+  user-name: zhagnsan
+  boss: true
+#  时间默认用 / 分割
+  birth: 1993/10/15 21:21:00
+  age: 22
+  #  student-info: 'line one \n line two'
+  #  student-info: line one \n line two
+  student-info: "line one \n line two"
+  interests:
+    - 抽烟
+    - 喝酒
+    - 烫头
+#  行内写法
+  animal: [阿黄, 小黑]
+  salarys: [15, 45.12, 78979]
+#  key 为中文的时候，要特别注意，不能直接写，要转义一下
+#  score: {"[语文]":20, "[数学]":15,"english":30}
+  score: {Chinese: 20, Math: 15, English: 30}
+#  行内写法
+#  pet: {name: yufei, breed: 边牧}
+  pet:
+    name: yufei
+    breed: 边牧
+  all-pets:
+    "[猫]":
+      - {name: 狸花猫, breed: 狸花猫}
+      - {name: 橘猫, breed: 橘猫}
+      - {name: 英短, breed: 英短}
+      - {name: 波斯猫, breed: 波斯猫}
+    '[狗]':
+      - name: 金毛
+        breed: 金毛
+      - name: 中华田园犬
+        breed: 中华田园犬
+      - name: 博美
+        breed: 博美
+      - name: 泰迪
+        breed: 泰迪
+#  user-organization:
+#    #    虽然提示波浪线，但是实际上没有报错
+#    #    没有成功
+#    ? - xiashuo
+#      - dfasda
+#    : - name: 'xiashuo'
+#        age: 21
+#  pet-home:
+#  #    虽然提示波浪线，但是实际上没有报错
+#  #    没有成功
+#    ? name: xiashuo
+#      breed: 边牧
+#    : - name: xiashuo
+#        age: 21
+#      - name: dfasdfa
+#        age: 45
+  #  成功方案
+  user-organization:
+    "[xiashuo, dfasda]":
+      - name: 'xiashuo'
+        age: 21
+
+
+
+
+
