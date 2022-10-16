@@ -59,8 +59,18 @@ student:
     "[xiashuo, dfasda]":
       - name: 'xiashuo'
         age: 21
-
-
-
-
-
+  info0: |
+    aaaa
+    bbbb
+    cccc
+  info1: >
+    aaaa
+    bbbb
+    cccc
+  info2: > 
+    aaaa
+    bbbb
+      cccc
+      dddd
+    eeee 
+    

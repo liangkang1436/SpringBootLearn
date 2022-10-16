@@ -29,5 +29,8 @@ public class Student {
     private Map<String, List<Pet>> allPets;
     private Map<List<String>, List<User>> userOrganization;
     private Map<Pet, List<User>> petHome;
+    private String info0;
+    private String info1;
+    private String info2;
 
 }
