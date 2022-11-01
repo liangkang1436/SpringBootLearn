@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: classpath-base-yaml

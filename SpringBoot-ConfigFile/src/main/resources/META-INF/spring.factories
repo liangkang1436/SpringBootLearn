@@ -1,0 +1,2 @@
+#org.springframework.boot.env.EnvironmentPostProcessor=xyz.xiashuo.springbootconfigfile.NacosEnvPostProcessor
+#org.springframework.context.ApplicationListener=xyz.xiashuo.springbootconfigfile.NacosEnvPostProcessor

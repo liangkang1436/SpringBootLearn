@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: module&config-null-yaml
+  profiles:
+    active: base,dev

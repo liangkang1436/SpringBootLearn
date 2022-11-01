@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: classpath&config-null-yaml

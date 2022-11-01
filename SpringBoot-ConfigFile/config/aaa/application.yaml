@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: module&config&aaa&bbb-null-yaml
