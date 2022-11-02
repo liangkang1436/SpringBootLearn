@@ -12,4 +12,5 @@ spring:
     static-path-pattern: /resources/**
 #  web:
 #    resources:
+#      # 这里可以传入单个，也可以传入列表
 #      static-locations: classpath:/myResources/
