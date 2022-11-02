@@ -40,19 +40,19 @@
     </dependencies>
 
     <build>
-        <resources>
-            <!-- 将项目模块根路径下的配置文件添加到打包文件中 ，会覆盖编译输出路径下的配置文件位置中的同路径下的同名配置文件 -->
-            <!-- 默认不添加 xml 格式的配置文件 -->
-            <resource>
-                <directory>${basedir}</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/application*.yml</include>
-                    <include>**/application*.yaml</include>
-                    <include>**/application*.properties</include>
-                </includes>
-            </resource>
-        </resources>
+<!--        <resources>-->
+<!--            &lt;!&ndash; 将项目模块根路径下的配置文件添加到打包文件中 ，会覆盖编译输出路径下的配置文件位置中的同路径下的同名配置文件 &ndash;&gt;-->
+<!--            &lt;!&ndash; 默认不添加 xml 格式的配置文件 &ndash;&gt;-->
+<!--            <resource>-->
+<!--                <directory>${basedir}</directory>-->
+<!--                <filtering>true</filtering>-->
+<!--                <includes>-->
+<!--                    <include>**/application*.yml</include>-->
+<!--                    <include>**/application*.yaml</include>-->
+<!--                    <include>**/application*.properties</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+<!--        </resources>-->
         <plugins>
             <!--  每次构建之前自动clean-->
             <plugin>

@@ -3,5 +3,4 @@ spring:
     active: dev
   application:
     name: classpath-null-yaml
-#    include: dev
 
