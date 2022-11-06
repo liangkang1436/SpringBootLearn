@@ -10,6 +10,19 @@ server:
 spring:
   mvc:
     static-path-pattern: /resources/**
+
+#    formcontent:
+#      filter:
+#        enabled: true
+
+#    hiddenmethod:
+#      filter:
+#        enabled: true
+
+#  web:
+#    resources:
+#      add-mappings: false
+
 #  web:
 #    resources:
 #      # 这里可以传入单个，也可以传入列表
