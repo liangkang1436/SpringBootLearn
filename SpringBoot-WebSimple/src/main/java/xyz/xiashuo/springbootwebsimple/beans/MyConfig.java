@@ -2,6 +2,7 @@ package xyz.xiashuo.springbootwebsimple.beans;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -14,7 +15,7 @@ import org.springframework.web.util.UrlPathHelper;
 public class MyConfig implements WebMvcConfigurer {
 
     @Bean
-    public HiddenHttpMethodFilter myHiddenHttpMethodFilter(){
+    public HiddenHttpMethodFilter myHiddenHttpMethodFilter() {
         HiddenHttpMethodFilter filter = new HiddenHttpMethodFilter();
         filter.setMethodParam("_m");
         return filter;
@@ -25,6 +26,16 @@ public class MyConfig implements WebMvcConfigurer {
         UrlPathHelper pathHelper = new UrlPathHelper();
         pathHelper.setRemoveSemicolonContent(false);
         configurer.setUrlPathHelper(pathHelper);
+    }
+
+    @Bean
+    @Order(1)
+    public User myBean() {
+        User user = new User();
+        user.setId(456);
+        user.setName("aaa");
+        user.setAge(20);
+        return user;
     }
 
 }
