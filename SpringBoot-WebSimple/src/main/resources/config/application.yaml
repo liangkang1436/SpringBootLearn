@@ -9,14 +9,12 @@ server:
 
 spring:
   mvc:
-    static-path-pattern: /resources/**
-#    contentnegotiation:
-#      favor-parameter: true
-#      parameter-name: _f
-#      favor-path-extension: true
-#      media-types:
-#        json: application/json
-#        xml: application/xml
+#    static-path-pattern: /resources/**
+    contentnegotiation:
+      favor-parameter: true
+      parameter-name: _f
+      media-types:
+        xs: application/xs
 
 #    formcontent:
 #      filter:
